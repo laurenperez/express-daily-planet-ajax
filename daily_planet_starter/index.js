@@ -44,6 +44,28 @@ app.get('/about', function(req, res) {
     res.render('about');
 });
 
+
+app.delete('/article/:id', function(req, res) {
+  var articleToDelete = req.params.id;
+  articles.splice(articleToDelete,1);
+    // return ();
+  res.send({message: 'success'});
+});
+
+
+
+app.put('/article/edit', function(req, res) {
+    var articleToEditId = req.body.data;
+    
+    
+
+    console.log(articleToEditId);
+})
+
+
+
+
+
 app.listen(3000, function() {
     console.log("You're listening to the smooth sounds of port 3000 in the morning");
 });
