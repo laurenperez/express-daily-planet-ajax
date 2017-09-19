@@ -52,16 +52,18 @@ app.delete('/article/:id', function(req, res) {
   res.send({message: 'success'});
 });
 
+app.get('/articles/edit/:id', function(req, res) {
+    res.render('articles/edit', { article: articles[req.params.id], idx: req.params.id });
+});
 
 //THIS ONE DOES NOT
-app.put('/article/:id', function(req, res) {
-    var articleToEditId = req.body.data;
-    
-    console.log(articleToEditId);
-})
-
-
-
+app.put('/article/:id/edit', function(req, res) {
+    var articleToEditId = parseInt(req.params.id);
+    // below is the iterator for the array
+    articles[articleToEditId].title = req.body.title;
+    articles[articleToEditId].body = req.body.body;
+    res.send({message: 'success'});
+});
 
 
 app.listen(3000, function() {
