@@ -45,20 +45,18 @@ app.get('/about', function(req, res) {
 });
 
 
+//THIS ONE WORKS
 app.delete('/article/:id', function(req, res) {
   var articleToDelete = req.params.id;
   articles.splice(articleToDelete,1);
-    // return ();
   res.send({message: 'success'});
 });
 
 
-
-app.put('/article/edit', function(req, res) {
+//THIS ONE DOES NOT
+app.put('/article/:id', function(req, res) {
     var articleToEditId = req.body.data;
     
-    
-
     console.log(articleToEditId);
 })
 

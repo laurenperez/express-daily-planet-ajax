@@ -8,14 +8,14 @@
 <!-- this should show the form -->
 
 
-<form action="/article/edit" class="put-form">
+<form action="/article/:id" class="put-form">
   <label for="body">New Body</label>
   <input type="text" name="body" value="<%= article.body %>">
   <input type="submit" value="Update">
 </form>
 
 
-
+<!-- This is not working  -->
 <script>
   $('.put-form').on('submit', function(e) {
     e.preventDefault();
