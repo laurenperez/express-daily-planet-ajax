@@ -56,10 +56,9 @@ app.get('/articles/edit/:id', function(req, res) {
     res.render('articles/edit', { article: articles[req.params.id], idx: req.params.id });
 });
 
-//THIS ONE DOES NOT
+//THIS ONE DOES NOT YET
 app.put('/article/:id/edit', function(req, res) {
     var articleToEditId = parseInt(req.params.id);
-    // below is the iterator for the array
     articles[articleToEditId].title = req.body.title;
     articles[articleToEditId].body = req.body.body;
     res.send({message: 'success'});
