@@ -1,4 +1,4 @@
-<form action="/articles/<%= idx %>/edit" id="put-form">
+<form action="/articles/edit/<%= idx %>" id="put-form">
   <label for="title">New Title</label>
   <input type="text" name="title" value="<%= article.title %>">
   <label for="body">New Body</label>
@@ -11,7 +11,7 @@
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
 
-<!-- I think Im close but I cant get the edit data to update -->
+
 <script>
   $('[type=button]').on('click', function(e) {
     e.preventDefault();

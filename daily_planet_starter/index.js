@@ -56,8 +56,8 @@ app.get('/articles/edit/:id', function(req, res) {
     res.render('articles/edit', { article: articles[req.params.id], idx: req.params.id });
 });
 
-//THIS ONE DOES NOT YET
-app.put('/article/:id/edit', function(req, res) {
+//THIS ONE WORKS TOO
+app.put('/articles/edit/:id', function(req, res) {
     var articleToEditId = parseInt(req.params.id);
     articles[articleToEditId].title = req.body.title;
     articles[articleToEditId].body = req.body.body;
